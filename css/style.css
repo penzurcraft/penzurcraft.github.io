@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-size: 18px;
+  line-height: 1.5em;
+  padding: 2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  width: 640px;
+}
+
+h1, h2, h3, h4, p {
+  margin-bottom: 32px;
+}
+
+dl {
+  border: 1px solid #efefef;
+  border-radius: 5px;
+  padding: 2em;
+  font-family: "SF Mono", "Roboto Mono", "SF Mono for Powerline", "Courier New", monospace;
+}
+
+dt {
+  float: left;
+  clear: left;
+  width: 200px;
+  margin-right: 2em;
+  text-align: right;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+dt::after {
+  content:"";
+}
+
+dd {
+  margin: 0 0 0 110px;
+  padding: 0 0 0.5em 0;
+}
+
+p {
+  line-height: 1.5em;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+a, a:active, a:visited {
+  text-decoration: none;
+  color: #0000ff;
+  border-bottom: 1px solid #0000ff;
+}
+
+a:hover {
+  color: #0033ff;
+  border-bottom: 1px solid #0033ff;
+}
+
+footer {
+  margin-top: 64px;
+  opacity: 0.6;
+  padding: 32px 0;
+  border-top: 1px solid #efefef;
+}
+
+/**
+ * Classes
+ */
+ .welcome {
+  font-size: 1.5em;
+}
+
+a.title {
+  border: none;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+h4.sub {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #333;
+}
