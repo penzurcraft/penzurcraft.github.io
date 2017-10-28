@@ -1,4 +1,7 @@
-:80 {
-	log / stdout {combined}
-	proxy / https://penzurcraft.github.io
-}
+# Let's Encrypt
+mc.penzur.xyz
+tls jupenz@gmail.com
+
+# Essential
+log / stdout {combined}
+proxy / https://penzurcraft.github.io
