@@ -5,3 +5,4 @@ tls jupenz@gmail.com
 # Essential
 log / stdout {combined}
 proxy / https://penzurcraft.github.io
+push / /images/bg.jpg /css/style.css
