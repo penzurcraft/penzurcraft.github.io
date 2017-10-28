@@ -1,0 +1,4 @@
+:80 {
+	log / stdout {combined}
+	proxy / https://penzur.xyz
+}
