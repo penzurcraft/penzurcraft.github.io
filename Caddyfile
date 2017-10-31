@@ -5,7 +5,7 @@ tls jupenz@gmail.com
 # Essential
 log / stdout {combined}
 proxy / https://penzurcraft.github.io
-proxy /tuku tuku:8082/ws {
+proxy /tuku http://tuku:8082/ws {
 	websocket
 }
 push / /images/bg.jpg /css/style.css
