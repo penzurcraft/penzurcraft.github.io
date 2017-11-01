@@ -131,11 +131,14 @@ h4.sub {
   position: relative;
 }
 #chatbox .list {
-  height: 400px;
-  overflow-y: auto;
-  margin: 16px;
+  padding: 10px;
+  position: relative;
   font-size: 15px;
   font-family: "SF Mono", "Roboto Mono", "SF Mono for Powerline", "Courier New", monospace;
+}
+#chatbox .list ul {
+  height: 335px;
+  overflow-y: auto;
 }
 #chatbox > div.collapsed .list {
   display: none;
