@@ -112,7 +112,7 @@ h4.sub {
   height: 400px;
 }
 #chatbox > div.collapsed {
-  width: 200px;
+  width: 120px;
   height: 50px !important;
 }
 
@@ -163,7 +163,7 @@ h4.sub {
 }
 .message {
   float: right;
-  width: 370px;
+  width: 387px;
 }
 .toggle {
   display: block;
@@ -183,6 +183,6 @@ h4.sub {
   color: #ffffff;
   font-weight: bold;
   padding: 0 9px;
-  right: 18px;
-  top: -8px;
+  right: -8px;
+  top: -14px;
 }
