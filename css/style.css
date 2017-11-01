@@ -70,7 +70,6 @@ a:hover {
 
 footer {
   margin-top: 64px;
-  opacity: 0.6;
   padding: 32px 0;
   border-top: 1px solid #efefef;
 }
@@ -95,4 +94,92 @@ h4.sub {
   font-size: 14px;
   letter-spacing: 0.5px;
   color: #333;
+}
+
+#chatbox {
+  position: fixed;
+  border: 1px solid #0000ff;
+  box-shadow: 0px 10px 30px 10px rgba(0,0,255,0.05);
+  border-radius: 10px;
+  bottom: 32px;
+  right: 32px;
+  background-color: #fff;
+  overflow-y: hidde;
+}
+
+#chatbox > div {
+  width: 500px;
+  height: 400px;
+}
+#chatbox > div.collapsed {
+  width: 200px;
+  height: 50px !important;
+}
+
+#chatbox h4 {
+  color: #0000ff;
+  margin-bottom: 0px;
+  text-align: center;
+}
+
+#chatbox header {
+  border-bottom: 1px solid #0000ff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: rgba(0,0,255,0.05);
+  padding: 12px;
+  position: relative;
+}
+#chatbox .list {
+  height: 400px;
+  overflow-y: auto;
+  margin: 16px;
+  font-size: 15px;
+  font-family: "SF Mono", "Roboto Mono", "SF Mono for Powerline", "Courier New", monospace;
+}
+#chatbox > div.collapsed .list {
+  display: none;
+}
+#chatbox > div.collapsed header {
+  border-bottom: none;
+}
+
+#chatbox li {
+  border-bottom: 1px solid rgba(0,0,255,0.05);
+  overflow: auto;
+}
+
+.time, .message {
+  display: inline-block;
+}
+
+.time {
+  float: left;
+  width: 90px;
+  opacity: 0.4;
+}
+.message {
+  float: right;
+  width: 370px;
+}
+.toggle {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+}
+.info {
+  position: absolute;
+  display: inline-block;
+  border-radius: 100px;
+  background-color: #0000ff;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0 9px;
+  right: 18px;
+  top: -8px;
 }
