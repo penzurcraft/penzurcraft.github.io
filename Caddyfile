@@ -10,4 +10,4 @@ proxy /ws tuku:8082 {
 	websocket
 }
 # Awesomness!
-push / /images/bg.jpg /css/style.css
+push / /images/bg.png /css/style.css
