@@ -71,7 +71,7 @@ class ChatBox extends React.Component {
   render() {
     return <div class={this.state.collapsed ? 'collapsed' : ''}>
       <header>
-        <h4>CHAT LOGS</h4>
+        <h4>Activities</h4>
         <button class="toggle" onClick={this.toggle.bind(this)}>&nbsp;</button>
         {this.state.unreadCount > 0 && <span class="info">{this.state.unreadCount}</span>}
       </header>
