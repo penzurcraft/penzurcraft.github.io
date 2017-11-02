@@ -36,7 +36,10 @@ class ChatBox extends React.Component {
 
       const log = {
         time: m.data.match(/\d+:\d+:\d+/i)[0],
-        message: m.data.replace(/\[.+\]: /i, '').replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '')
+        message: m.data
+                  .replace(/\[.+\]: /i, '')
+                  .replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '')
+                  .replace(/\[authme\] /ig, '')
       };
 
       const logs = [log, ...this.state.logs]
