@@ -84,7 +84,7 @@ class ChatBox extends React.Component {
 
   componentDidUpdate() {
     const { logsContainer: c, ulist: u } = this;
-    c && (c.scrollTop = u.scrollHeight);
+    c && u && (c.scrollTop = u.scrollHeight);
   }
 
   toggle() {
