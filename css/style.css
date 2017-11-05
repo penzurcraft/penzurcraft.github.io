@@ -76,10 +76,7 @@ footer {
   border-top: 1px solid #eee;
 }
 
-/**
- * Classes
- */
- .welcome {
+.welcome {
   font-size: 1.5em;
 }
 
@@ -98,98 +95,112 @@ h4.sub {
   color: #333;
 }
 
-#chatbox {
-  position: fixed;
-  border: 1px solid #0000ff;
-  box-shadow: 0px 10px 30px 10px rgba(0,0,255,0.05);
-  border-radius: 10px;
-  bottom: 32px;
-  right: 32px;
-  background-color: #fff;
-  overflow-y: hidde;
-}
-
-#chatbox > div {
-  width: 500px;
-  height: 400px;
-}
-#chatbox > div.collapsed {
-  width: 120px;
-  height: 50px !important;
-}
-
-#chatbox h4 {
-  color: #0000ff;
-  margin-bottom: 0px;
-  text-align: center;
-}
-
-#chatbox header {
-  border-bottom: 1px solid #0000ff;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: rgba(0,0,255,0.05);
-  padding: 12px;
-  position: relative;
-}
-#chatbox .list {
-  padding: 10px;
-  position: relative;
-  font-size: 15px;
-  font-family: "SF Mono", "Roboto Mono", "SF Mono for Powerline", "Courier New", monospace;
-}
-#chatbox .list ul {
-  height: 335px;
-  overflow-y: auto;
-}
-#chatbox > div.collapsed .list {
-  display: none;
-}
-#chatbox > div.collapsed header {
-  border-bottom: none;
-}
-
-#chatbox li {
-  border-bottom: 1px solid rgba(0,0,255,0.05);
-  overflow: auto;
-}
-
-.time, .message {
-  display: inline-block;
-}
-
-.time {
-  float: left;
-  width: 90px;
-  opacity: 0.4;
-}
-.message {
+.logs {
+  box-shadow: -5px 15px 20px 10px rgba(0,0,255,0.4);
   float: right;
-  width: 387px;
-}
-.toggle {
-  display: block;
-  position: absolute;
-  top: 0;
+  box-sizing: border-box;
+  padding: 15px;
+  background-color: #fff;
+  width: 720px;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  bottom: 0;
+  border-left: 1px solid rgba(0,0,255,0.9);
   right: 0;
+  z-index: 1;
+}
+
+.logs:before {
+  content: "";
+  display: block;
+  position: fixed;
+  right: 720px;
   width: 100%;
   height: 100%;
-  cursor: pointer;
-  background: transparent;
+  z-index: 0;
+  background-color: rgba(255,255,255,0.8);
 }
+
+.logs > ul {
+  font-family: "SF Mono", "Roboto Mono", "SF Mono for Powerline", "Courier New", monospace;
+  font-size: 14px;
+  list-style: none;
+}
+
+.logs > ul > li:not(:last-child) {
+  border-bottom: 1px solid rgba(0,0,255,0.05);
+  overflow: auto;
+  display: block;
+}
+
+.logs > ul > li > .time {
+  float: left;
+  color: rgba(0,0,0,0.4);
+}
+
+.logs > ul > li > .user {
+  float: left;
+  margin-left: 1em;
+  color: #0000ff;
+}
+
+.logs > ul > li > .message {
+  width: 470px;
+  text-align: left;
+  float: right;
+}
+
+button.toggle {
+  box-shadow: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  position: fixed;
+  color: #ffffff;
+  display: block;
+  width: 64px;
+  height: 64px;
+  right: 740px;
+  top: 20px;
+  color: #0000ff;
+  background-color: transparent;
+  z-index: 3;
+}
+
+button.toggle.collapsed {
+  box-shadow: 0 5px 30px 3px rgba(0,0,255, 0.4);
+  background-color: #0000ff;
+  color: #ffffff;
+  right: 32px;
+  bottom: 32px;
+  top: auto;
+}
+
+.content {
+  z-index: 3;
+}
+
 .info {
   position: absolute;
   display: inline-block;
-  border-radius: 100px;
-  background-color: #0000ff;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 0 9px;
-  right: -8px;
-  top: -14px;
+  padding: 4px 8px;
+  border: 2px solid #ffffff;
+  top: -10px;
+  right: -20px;
+  border-radius: 50px;
+  background-color: #ff0000;
 }
 
 .heart {
   color: red;
   font-weight: bold;
+}
+
+.notice {
+  margin: 0;
+  text-align: center;
+  padding: 1em;
+  color: #aaa;
 }
