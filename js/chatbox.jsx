@@ -45,7 +45,7 @@ class ChatBox extends React.Component {
     let message = '';
 
     // User column
-    const uc = txt.match(/<.+>/g);
+    const uc = txt.replace(/^\[\d+:\d+:\d+\]\s\]/).match(/<[^<]+>/);
     if (uc && uc[0]) {
       user = uc[0].replace(/<.+\s([a-zA-Z\w]+\])?|<|>/ig, '');
       message = txt.split(/<.+>\s/ig).pop();
@@ -58,6 +58,7 @@ class ChatBox extends React.Component {
 
   componentWillMount() {
     const ws = new WebSocket(this.state.address);
+
     ws.onmessage = (m) => {
       const logs = [...this.state.logs, this.parseMessage(m.data)]
 
@@ -74,12 +75,18 @@ class ChatBox extends React.Component {
       const { logsContainer: c } = this;
       c && (c.scrollTop = 100000);
     };
+
     ws.onopen = () => {
       if (ws.readyState === 1) {
         this.setState(Object.assign({}, this.state, { loading:false }));
       }
     }
+
     ws.onclose = console.log;
+  }
+
+  componentDidUpdate() {
+    this.logsContainer && (this.logsContainer.scrollTop = 10000);
   }
 
   toggle() {
