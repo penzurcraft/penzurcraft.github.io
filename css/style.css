@@ -116,6 +116,7 @@ h4.sub {
   display: block;
   position: fixed;
   right: 720px;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 0;
