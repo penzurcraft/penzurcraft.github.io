@@ -1,2 +1,4 @@
-# penzurcraft.github.io
-Website
+# https://mc.penzur.xyz
+
+Official Page
+

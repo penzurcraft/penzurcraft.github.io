@@ -2,12 +2,14 @@
 mc.penzur.xyz
 tls jupenz@gmail.com
 
-# Essential
+# Logs
 log / stdout {combined}
-# Proxy
+
+# Home page with http push
 proxy / https://penzurcraft.github.io
+push / /images/bg.png /css/style.css
+
+# Websocket
 proxy /ws tuku:8082 {
 	websocket
 }
-# Awesomness!
-push / /images/bg.png /css/style.css
