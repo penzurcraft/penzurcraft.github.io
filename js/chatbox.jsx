@@ -7,7 +7,7 @@ function Logs(props) {
     return <p class="center">No activities yet</p>
   }
 
-  return <ul>
+  return <ul ref={props.refHandler}>
     {
       props.logs.map((log) => <li>
         {
@@ -71,9 +71,6 @@ class ChatBox extends React.Component {
         logs,
         unreadCount
       }));
-
-      const { logsContainer: c } = this;
-      c && (c.scrollTop = 100000);
     };
 
     ws.onopen = () => {
@@ -86,7 +83,8 @@ class ChatBox extends React.Component {
   }
 
   componentDidUpdate() {
-    this.logsContainer && (this.logsContainer.scrollTop = 10000);
+    const { logsContainer: c, ulist: u } = this;
+    c && (c.scrollTop = u.scrollHeight);
   }
 
   toggle() {
@@ -107,7 +105,7 @@ class ChatBox extends React.Component {
     return [
       (!this.state.collapsed &&
         <div class={`logs ${this.collapsedClass()}`} ref={el => this.logsContainer = el }>
-          {(this.state.loading && <Spinner/>) || <Logs logs={this.state.logs}/>}
+          {(this.state.loading && <Spinner/>) || <Logs logs={this.state.logs} refHandler={el => this.ulist = el}/>}
         </div>
       ),
       <button class={`toggle ${this.collapsedClass(true)}`} onClick={this.toggle.bind(this)}>&nbsp;
