@@ -40,14 +40,15 @@ class ChatBox extends React.Component {
     // Remove term color
     const txt = msg.replace(/[\u001b\u009b][[()#;?]*(?:[0-9]{1,4}(?:;[0-9]{0,4})*)?[0-9A-ORZcf-nqry=><]/g, '');
     const time = txt.match(/^\[\d+:\d+:\d+\] /g, '')[0].replace(/[^\d\:]/g, '');
+    if (txt.match(/>:v/)) console.log(txt);
 
     let user = '!';
     let message = '';
 
     // User column
-    const uc = txt.replace(/^\[\d+:\d+:\d+\]\s\]/).match(/<[^<]+>/);
+    const uc = txt.replace(/^\[\d+:\d+:\d+\]\s/).match(/<[^<]+>\s/);
     if (uc && uc[0]) {
-      user = uc[0].replace(/<.+\s([a-zA-Z\w]+\])?|<|>/ig, '');
+      user = uc[0].trim().replace(/<.+\s([a-zA-Z\w]+\])?|<|>/ig, '');
       message = txt.split(/<.+>\s/ig).pop();
     } else {
       message = txt.replace(/\[\d+:\d+:\d+\]\s?|\[.+\]\:?\s/g, '');
